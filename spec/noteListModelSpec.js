@@ -1,10 +1,9 @@
 function testListOfNotes() {
 
-  testList = new List();
-  testNote = new Note("Hello");
+  var list = new List();
 
-  testList.add(testNote.text);
-  if(testList.view()[0].text !== "Hello") {
+  list.add("Hello");
+  if(list.view()[0].text !== "Hello") {
     throw new Error('The note was not accessible in the list');
   }
 
