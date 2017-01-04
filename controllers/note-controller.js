@@ -1,11 +1,10 @@
 
 
 (function(exports) {
-  exports.noteController = {
-    showList: function(something) {
-      var listHtml = document.getElementById("app");
-      console.log(listHtml);
-      listHtml.innerHTML = something;
+  exports.NoteController = {
+    showList: function(listHtml) {
+      var element = document.getElementById("app");
+      element.innerHTML = listHtml;
     }
   }
 })(this);

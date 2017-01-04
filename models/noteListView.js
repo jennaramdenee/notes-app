@@ -5,7 +5,7 @@
   };
 
 
-  ListView.prototype.convert = function(list){
+  ListView.prototype.changeToHtml = function(list){
     var listArray = list.view().map(function(note){
       return "<li><div>" + note.text + "</div></li>";
     });
