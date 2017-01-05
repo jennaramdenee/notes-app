@@ -9,6 +9,10 @@
     return this.text;
   };
 
+  Note.prototype.viewId = function() {
+    return this.id;
+  }
+
   exports.Note = Note;
 
 })(this);
