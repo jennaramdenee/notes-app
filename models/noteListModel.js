@@ -4,10 +4,12 @@
 
   var List = function() {
       this.list = [];
+      this.currentNoteId = 0;
   };
 
   List.prototype.add = function(text) {
-    var note = new Note(text);
+    var note = new Note(text, this.currentNoteId);
+    this.currentNoteId += 1
     return this.list.push(note);
   };
 
