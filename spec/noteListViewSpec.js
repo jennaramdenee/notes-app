@@ -25,3 +25,17 @@ function UnorderedListofNotesCreatedTwoNotes(){
 };
 
 UnorderedListofNotesCreatedTwoNotes();
+
+function showTwentyCharacters(){
+
+  list = new List();
+  listView = new ListView();
+
+  list.add("This is a really really really long note");
+
+  if(listView.changeToHtml(list) !== "<ul><li><div>This is a really rea</div></li></ul>"){
+    throw new Error("More than 20 characters are being shown");
+  }
+};
+
+showTwentyCharacters();
