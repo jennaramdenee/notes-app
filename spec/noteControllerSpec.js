@@ -70,9 +70,43 @@ function testChangeSingleNoteHTML(){
 
 }
 
-testNoteControllerInstantiated();
-testValidateInnerHTML();
-testFindIdOfNote();
-testFindNoteById();
-testGetSingleNoteHTML();
-testChangeSingleNoteHTML();
+function testSubmitFormUpdatesPageWithNote(){
+  var noteList = new NoteList();
+  var controller = new NoteController(noteList);
+
+  var testNoteForm = document.createElement("form");
+  testNoteForm.id = "noteForm";
+  testNoteForm.method = "Post";
+  // testNoteForm.action = "/notes/new"
+
+  var testTextArea = document.createElement("textarea");
+  testTextArea.id = "text";
+  testTextArea.value = "Test Note";
+
+  var testSubmitButton = document.createElement("input");
+  testSubmitButton.value = "Submit";
+  testSubmitButton.type = "submit";
+  testSubmitButton.id = "submitButton";
+
+  testNoteForm.appendChild(testTextArea);
+  testNoteForm.appendChild(testSubmitButton);
+
+  document.body.appendChild(testNoteForm);
+
+  // document.getElementById("submitButton").addEventListener("click", function(evt){
+  //   evt.preventDefault();
+  // })
+
+  testNoteForm.submit();
+
+  assert.isTrue(document.getElementById("app").innerHTML.includes("Test Note"));
+
+}
+
+// testNoteControllerInstantiated();
+// testValidateInnerHTML();
+// testFindIdOfNote();
+// testFindNoteById();
+// testGetSingleNoteHTML();
+// testChangeSingleNoteHTML();
+testSubmitFormUpdatesPageWithNote();
