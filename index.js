@@ -7,8 +7,8 @@ document.getElementById("noteForm").addEventListener("submit", function(evt){
   evt.preventDefault();
   noteList.addNote(evt.srcElement[0].value);
   controller.convertToHTML();
-
 })
+
 window.addEventListener("hashchange", function(){
   controller.renderSingleNoteHTML();
 })
